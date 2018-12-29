@@ -21,7 +21,7 @@
                 floorArriving[elevator.currentFloor()] = 0;
                 if (elevator.goingUpIndicator()) {   // up
                     elevator.goingDownIndicator(false);
-                    if (elevator.loadFactor() < 0.65){    //have empty space
+                    if (elevator.loadFactor() < 0.55){    //have empty space
                         for (var i = elevator.currentFloor(); i < floorsNum; i++){
                             if ( ( floorButton[i][0] == 1 && floorArriving[i] !== 1 ) || elevator.getPressedFloors().includes(i)){
                                 floorArriving[elevator.currentFloor()] = 0;
@@ -101,7 +101,7 @@
                         }
                     }
                 }else{ // down
-                    if (elevator.loadFactor() < 0.65){    //have empty space
+                    if (elevator.loadFactor() < 0.55){    //have empty space
                         for (var i = elevator.currentFloor(); i >= 0; i--){
                             if ( ( floorButton[i][1] == 1 && floorArriving[i] !== 1 ) || elevator.getPressedFloors().includes(i)){
                                 floorArriving[elevator.currentFloor()] = 0;
